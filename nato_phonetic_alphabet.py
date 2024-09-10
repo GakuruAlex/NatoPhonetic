@@ -9,7 +9,7 @@ class NatoPhonetic:
         """
         phonetic_data = pd.read_csv("nato_phonetic_alphabet.csv")
 
-        phonetic_data_dict = {row[1]["letter"]: row[1]["code"] for row in phonetic_data.iterrows()}
+        phonetic_data_dict = {row.letter: row.code for (index,row) in phonetic_data.iterrows()}
         print(phonetic_data_dict)
 
         return phonetic_data_dict
